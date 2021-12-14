@@ -1,4 +1,4 @@
-# weather-app
+# [Weather app]( https://svitlanatsupryk-jul18.github.io/weather-app/)
 
 ## Project setup
 ```
@@ -18,6 +18,11 @@ npm run build
 ### Lints and fixes files
 ```
 npm run lint
+```
+
+### Deploy to Github Pages
+```
+npm run deploy
 ```
 
 ### Customize configuration
