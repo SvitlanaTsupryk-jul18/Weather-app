@@ -1,8 +1,6 @@
 <template>
   <div class="home container">
-    <div>HelloHello</div>
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <CityForm :currentData="currentData"  :currentCity="currentCity"/>
     <ListCurrent :currentData="currentData" />
     <ListForecast :forecastData="forecastData.forecast" />
   </div>
@@ -10,7 +8,8 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+
+import CityForm from "@/components/CityForm.vue";
 import AxiosService from "@/services/AxiosService.js";
 import ListCurrent from "@/components/ListCurrent.vue";
 import ListForecast from "@/components/ListForecast.vue";
@@ -18,16 +17,17 @@ import ListForecast from "@/components/ListForecast.vue";
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    CityForm,
     ListCurrent,
     ListForecast
   },
-  data() {
-    return {
-      currentData: {},
-      forecastData: {},
-    };
-  },
+  data: () => ({
+    currentCityName: "",
+    currentCityLat: "",
+    currentCityLng: "",
+    currentData: {},
+    forecastData: {},
+  }),
   created: function () {
     AxiosService.getCurrentCity("London")
       .then((response) => {
