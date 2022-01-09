@@ -4,6 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
+    <!--    <NavBar/>-->
+    <!--    <router-view :key="$route.fullPath"/>-->
     <router-view />
   </div>
 </template>
